@@ -18,13 +18,13 @@
         return;
     }
 
-    // Build the report. (No league/team IDs are included; your backend will retrieve these via ESPN API.)
+    // Build the report.
     let report = {
         platform: 'espn',
         cookies: cookies
     };
 
-    // Submit the report by redirecting to your backend endpoint with the data as query parameters.
+    // Submit the report by redirecting to backend endpoint with the data as query parameters.
     submitReport(report);
 
     // --- Helper Functions ---
