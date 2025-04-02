@@ -45,7 +45,8 @@
     function submitReport(report) {
         let reportQS = toQueryString(report, 'bmd');
         alert("Thanks! We have what we need.\n\nRedirecting you to complete the league setup.");
-        // Redirect to your backend endpoint.
+        // Redirect to your backend endpoint. 
+        // TODO: Connnect to backend endpoint
         location.href = "https://yourdomain.com/platform_access.php?" + reportQS;
     }
 
