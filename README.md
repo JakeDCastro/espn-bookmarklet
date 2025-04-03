@@ -1,1 +1,1 @@
-bookmarklet to deliver ESPN connection
+ESPN → FullCount
