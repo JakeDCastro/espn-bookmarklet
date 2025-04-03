@@ -24,7 +24,7 @@
         cookies: cookies
     };
 
-    // Submit the report by redirecting to backend endpoint with the data as query parameters.
+    // Submit the report by redirecting to your backend endpoint with the data as query parameters.
     submitReport(report);
 
     // --- Helper Functions ---
@@ -33,7 +33,8 @@
         var str = [];
         for (var p in obj) {
             if (obj.hasOwnProperty(p)) {
-                var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+                var k = prefix ? prefix + "[" + p + "]" : p,
+                    v = obj[p];
                 str.push(typeof v === "object" ?
                     toQueryString(v, k) :
                     encodeURIComponent(k) + "=" + encodeURIComponent(v));
@@ -45,9 +46,8 @@
     function submitReport(report) {
         let reportQS = toQueryString(report, 'bmd');
         alert("Thanks! We have what we need.\n\nRedirecting you to complete the league setup.");
-        // Redirect to your backend endpoint. 
-        // TODO: Connnect to backend endpoint
-        location.href = "https://yourdomain.com/platform_access.php?" + reportQS;
+        // Redirect to your backend Cloud Function endpoint.
+        location.href = "https://us-central1-pressbox-9937a.cloudfunctions.net/platformAccess?" + reportQS;
     }
 
     function getCookieValue(name) {
